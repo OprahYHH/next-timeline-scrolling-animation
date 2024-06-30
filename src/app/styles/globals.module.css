@@ -1,7 +1,19 @@
 .container {
-    margin: 0 auto;
-    background-color: black;
-    z-index: 0;
-    max-width: 1000px;
-    height: 100%;
+  margin: 0 auto;
+  background-color: black;
+  z-index: 0;
+  max-width: 1000px;
+  height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 900px;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}

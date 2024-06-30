@@ -65,6 +65,7 @@ const Item: FC<ItemProps> = ({ title, content, subtitle }) => {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.text}>
+            <div className={styles.titleRight}>{title}</div>
             <div className={styles.subtitle}>{subtitle}</div>
             <div className={styles.content}>{content}</div>
           </div>

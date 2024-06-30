@@ -33,11 +33,29 @@
 }
 
 .gradient {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #00d1ff 20%, #00d1ff 70%, #b133ff 90%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #00d1ff 20%, #00d1ff 70%, #b133ff 90%, rgba(0, 0, 0, 0) 100%);
     width: 3px;
     position: fixed;
     top: 10vh;
     z-index: 2;
     transform: translateX(-50%);
     left: 50%;
-  }
+}
+
+@media screen and (max-width: 1024px) {
+    .progress {
+        max-height: 2200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .progress {
+        left: 10%;
+        transform: translateX(-10%);
+    }
+
+    .gradient {
+        left: 10%;
+        transform: translateX(-10%);
+    }
+}

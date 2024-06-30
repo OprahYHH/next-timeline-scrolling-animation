@@ -10,6 +10,9 @@ interface BackgroundContainerProps {
 const BackgroundContainer: FC<BackgroundContainerProps> = ({ children }) => {
   const [scrollY, setScrollY] = useState<number>(0);
   const [gradientHeight, setGradientHeight] = useState<number>(0);
+  const [gradientBackground, setGradientBackground] = useState<string>(
+    'linear-gradient(180deg, rgba(0,0,0,0) 0%, #00D1FF 10%, #B133FF 100%)'
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +29,13 @@ const BackgroundContainer: FC<BackgroundContainerProps> = ({ children }) => {
   useEffect(() => {
     const totalHeight = document.body.scrollHeight - window.innerHeight;
     const newHeight = Math.min(100, (scrollY / totalHeight) * 100);
-
     setGradientHeight(newHeight);
+
+    if (newHeight > 83) {
+      setGradientBackground('linear-gradient(180deg, rgba(0,0,0,0) 0%, #00d1ff 20%, #00d1ff 70%, #b133ff 90%, rgba(0,0,0,0) 100%)');
+    } else {
+      setGradientBackground('linear-gradient(180deg, rgba(0,0,0,0) 0%, #00d1ff 20%, #00d1ff 70%, #b133ff 99%, rgba(0,0,0,0) 100%)');
+    }
   }, [scrollY]);
 
   return (
@@ -36,7 +44,7 @@ const BackgroundContainer: FC<BackgroundContainerProps> = ({ children }) => {
       <div className={styles.progress}>
         <motion.div
           className={styles.gradient}
-          style={{ height: `${gradientHeight}%` }}
+          style={{ height: `${gradientHeight}%`, background: gradientBackground }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
