@@ -1,0 +1,71 @@
+/* styles/Item.module.css */
+.item {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 180px 1fr;
+    justify-content: center;
+    height: 50vh;
+}
+
+.left {
+    flex: 0 0 120px;
+    text-align: right;
+}
+
+.center {
+    flex: 0 0 50px;
+    position: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: sticky;
+    top: 54vh;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 8px #0a0a0a;
+    z-index: 5;
+}
+
+.right {
+    flex: 0 0 120px;
+    padding-left: 20px;
+    text-align: left;
+    top: 50vh;
+}
+
+.title {
+    font-weight: bold;
+    color: white;
+    position: sticky;
+    top: 50vh;
+    line-height: 1.5;
+    font-size: 48px;
+}
+
+.text {
+    line-height: 1.5;
+    position: sticky;
+    top: 50vh;
+    margin-top: 14vh;
+}
+
+
+.subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.content {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+}
